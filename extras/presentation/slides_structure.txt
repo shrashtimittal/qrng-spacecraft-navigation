@@ -1,0 +1,108 @@
+--------------------------------------------
+Slide 1 — Title Slide
+--------------------------------------------
+Title:
+    QRNG-Based Spacecraft Navigation
+Subtitle:
+    Injecting Quantum Randomness into Orbital Tracking
+
+Points:
+    • Real quantum noise from ANU QRNG
+    • Simulated spacecraft orbit (circular 2D)
+    • Kalman filter for state estimation
+    • Streamlit UI for live demos
+
+Visual suggestion:
+    Image of Earth orbit or simple orbit diagram
+
+
+--------------------------------------------
+Slide 2 — Why QRNG for Space Navigation?
+--------------------------------------------
+Key message:
+    Randomness affects every navigation system — sensors, propagation, drift.
+    Using quantum randomness gives more realistic stochastic modeling.
+
+Points:
+    • Spacecraft sensors suffer from noise + drift
+    • GNSS outages cause uncertainty spikes
+    • QRNG enables “physically true” randomness
+    • Model behavior under real-world uncertainty
+
+Visual suggestion:
+    Noise distributions / QRNG concept diagram
+
+
+--------------------------------------------
+Slide 3 — System Architecture
+--------------------------------------------
+Components:
+    • Orbit generator (sim/orbit.py)
+    • QRNG wrapper (ANU → OS → PRNG fallback)
+    • Noise + drift model
+    • 4-state Kalman filter (estimator/kalman.py)
+    • Streamlit UI for real-time visualization
+
+Diagram suggestion:
+    Orbit → QRNG noise → Measurement → Kalman Filter → Estimated Orbit
+
+
+--------------------------------------------
+Slide 4 — Simulation Flow
+--------------------------------------------
+Steps:
+    1) Generate clean orbit (circular)
+    2) Request quantum bits (ANU QRNG API)
+    3) Convert bits → uniform → Gaussian noise
+    4) Add drift + measurement noise
+    5) Run Kalman filter
+    6) Plot trajectory + RMSE
+
+Visual suggestion:
+    Flowchart or linear pipeline arrows
+
+
+--------------------------------------------
+Slide 5 — Results
+--------------------------------------------
+Show:
+    • True vs Measured vs Estimated trajectory (RMSE subplot)
+    • Final RMSE value
+    • Effect of QRNG vs PRNG on variability
+
+Explanation:
+    Kalman filter smooths noisy measurements.
+    QRNG gives slightly richer noise patterns for stress testing.
+
+
+--------------------------------------------
+Slide 6 — Live Demo (Streamlit)
+--------------------------------------------
+Show:
+    1) Run Simulation
+    2) Toggle QRNG vs PRNG
+    3) Adjust noise_std and drift_scale
+    4) Show RMSE change
+    5) Export PNG/CSV
+
+Explanation:
+    “This interface lets us explore how quantum vs classical randomness affects navigation performance in real time.”
+
+
+--------------------------------------------
+Slide 7 — Takeaways
+--------------------------------------------
+Points:
+    • QRNG adds realism to uncertainty modeling
+    • Kalman filtering remains robust even under quantum-scale noise
+    • Clean, reproducible architecture suitable for research + demos
+
+Final line:
+    “Quantum randomness isn’t just theory — it can improve how we model the space environment today.”
+
+
+--------------------------------------------
+Slide 8 — Thank You
+--------------------------------------------
+
+
