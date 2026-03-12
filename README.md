@@ -40,13 +40,21 @@ The key goals of this project are:
 
 Navigation pipeline used in this project:
 QRNG Source
+
 ↓
+
 Randomness Processing
+
 ↓
+
 Navigation Simulation
+
 ↓
+
 Trajectory Estimation
+
 ↓
+
 Performance Analysis
 
 The QRNG component provides high-quality randomness that can be used in stochastic simulation or probabilistic navigation algorithms.
